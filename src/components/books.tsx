@@ -158,11 +158,9 @@ export const Books = () => {
               href={b.href}
               target="_blank"
               className="p-2 hover:ring-1 hover:shadow-lg rounded-xl ring-red-500"
+              key={b.titolo}
             >
-              <article
-                key={b.titolo}
-                className="flex max-w-xl  flex-col items-start justify-between"
-              >
+              <article className="flex max-w-xl  flex-col items-start justify-between">
                 <div className="flex items-center gap-x-4 text-xs">
                   <span className="text-gray-500">Anno {b.anno}</span>
                   {b.tags.map((t) => (
