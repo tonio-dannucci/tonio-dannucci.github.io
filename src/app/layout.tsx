@@ -23,7 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/icon.png" sizes="any" />
+        <meta property="og:image" content="/tonio.jpg" />
+        <meta property="og:image:alt" content="Tonio d'Annucci" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

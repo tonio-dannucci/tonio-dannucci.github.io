@@ -82,8 +82,31 @@ export const Tonio = () => {
           </div>
 
           <div className="relative lg:ml-10">
+            <footer className="">
+              <div className="flex">
+                <div className="flex-shrink-0 lg:hidden">
+                  <Image
+                    width={96}
+                    height={96}
+                    className="h-24 w-24 rounded-xl"
+                    src="/tonio.jpg"
+                    alt="Tonio d'Annucci"
+                  />
+                </div>
+                <div className="flex ml-4 lg:ml-0">
+                  <div className="mb-4 lg:ml-0">
+                    <div className="text-2xl font-bold  leading-6 text-gray-900">
+                      Tonio d&apos;Annucci {"     "}
+                    </div>
+                    <div className="text-lg mt-2 font-medium leading-6 text-red-600">
+                      Scrittore e Professore Lucano
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </footer>
             <blockquote className="relative">
-              <div className="text-md leading-2 font-medium text-gray-700 lg:text-xl ">
+              <div className="text-md leading-2 font-medium text-gray-700 lg:text-xl mt-4">
                 <p>
                   Nato ad Atella (Basilicata) il 26 maggio 1944. Maestro
                   elementare (1968-2011) ha realizzato numerosi progetti di
@@ -94,62 +117,45 @@ export const Tonio = () => {
                   produzioni Laboratoriali in 13 volumi.
                 </p>
               </div>
-              <footer className="mt-8">
-                <div className="flex">
-                  <div className="flex-shrink-0 lg:hidden">
-                    <Image
-                      width={48}
-                      height={48}
-                      className="h-12 w-12 rounded-xl"
-                      src="/tonio.jpg"
-                      alt="Tonio d'Annucci"
-                    />
-                  </div>
-                  <div className="flex">
-                    <div className="ml-4 lg:ml-0">
-                      <div className="text-2xl font-bold  leading-6 text-gray-900">
-                        Tonio d&apos;Annucci {"     "}
-                      </div>
-                      <div className="text-lg mt-2 font-medium leading-6 text-red-600">
-                        Scrittore e Professore Lucano
-                      </div>
-                      <div className="mt-4 space-x-2">
-                        <a
-                          className="rounded bg-red-200 px-4 flex py-2 text-red-600 ring-red-800 transition-all hover:ring-2"
-                          target="_blank"
-                          href="https://www.youtube.com/channel/UCnABfizdU-u3sjHVXuaDU2g"
-                          rel="noreferrer"
-                        >
-                          <span className="">
-                            Guarda i miei video su YouTube
-                          </span>
-                          <svg
-                            className=" ml-2"
-                            width="20px"
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 461.001 461.001"
-                          >
-                            <g>
-                              <path
-                                fill="currentColor"
-                                d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728
-		c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137
-		C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607
-		c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
-                              />
-                            </g>
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </footer>
+              <YoutubeLink />
             </blockquote>
           </div>
         </div>
       </div>
     </section>
+  );
+};
+
+const YoutubeLink = () => {
+  return (
+    <div className="mt-4">
+      <a
+        className="rounded bg-red-200 px-4 py-2 text-red-600 ring-red-800 transition-all hover:ring-2"
+        target="_blank"
+        href="https://www.youtube.com/channel/UCnABfizdU-u3sjHVXuaDU2g"
+        rel="noreferrer"
+      >
+        <span className="">Guarda i miei video su YouTube</span>
+        <span className="inline">
+          <svg
+            className="inline ml-2"
+            width="20px"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 461.001 461.001"
+          >
+            <g>
+              <path
+                fill="currentColor"
+                d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728
+c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137
+C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607
+c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+              />
+            </g>
+          </svg>
+        </span>
+      </a>
+    </div>
   );
 };
