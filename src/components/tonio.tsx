@@ -99,7 +99,7 @@ export const Tonio = () => {
                       Tonio d&apos;Annucci {"     "}
                     </div>
                     <div className="text-lg mt-2 font-medium leading-6 text-red-600">
-                      Scrittore e Professore Lucano
+                      Maestro e Scrittore Lucano
                     </div>
                   </div>
                 </div>
@@ -108,13 +108,15 @@ export const Tonio = () => {
             <blockquote className="relative">
               <div className="text-md leading-2 font-medium text-gray-700 lg:text-xl mt-4">
                 <p>
-                  Nato ad Atella (Basilicata) il 26 maggio 1944. Maestro
-                  elementare (1968-2011) ha realizzato numerosi progetti di
-                  sperimentazione/innovazione didattica e tenuto seminari di
-                  aggiornamento e formazione in servizio a docenti della
-                  provincia di Potenza e di Salerno. Esperto di Scrittura
-                  Creativa, apprezzato da Kenneth Koch, ha raccolto le
-                  produzioni Laboratoriali in 13 volumi.
+                  Nato ad Atella (PZ) il 26/05/1944. Maestro elementare
+                  (1968-2011) ha realizzato numerosi progetti di innovazione
+                  didattica. Come curatore del volumetto{" "}
+                  <em>La Pace s&apos;impara</em> (1995) registra un elogio
+                  autografo di Roberto Fieschi (Università di Parma). Il saggio
+                  di demo-antropologia Atella del
+                  <em> Villaggio pre-Globale</em> (1996) viene attinto per tesi
+                  di laurea. Ha prodotto (1997-2012) 12 volumi di scrittura
+                  creativa nelle scuole di vario grado.
                 </p>
               </div>
               <YoutubeLink />

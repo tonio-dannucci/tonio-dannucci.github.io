@@ -6,7 +6,7 @@ const books = [
     editore: "Basiliskos",
     anno: 1996,
     ISBN: "88-8143-007-X",
-    tags: ["Etno Antropologia"],
+    tags: ["Etno-Antropologia"],
     description: `Un'arcaica società contadina, definitivamente collassata negli anni Sessanta e fagocitata dall'avvento del Villaggio Globale, è finita per diventare, nello spazio di pochi decenni, un'Atlantide dimenticata. L'Autore, in questo volume, ha inteso raccogliere gli appunti dei suoi scandagli nel "sommerso". La perlustrazione dei fondali, resi melmosi dal limo dell'oblio e dei conati di rimozione, non sempre è stata agevole; tuttavia dalle reiterate immersioni sono venuti alla luce reperti di notevole interesse demologico e di antropologia culturale. Questi beni "archeologici" riguardano la magia ed il mondo magico popolare, la medicina empirica e la farmacopea tradizionale, la produzione letteraria orale, i rituali e i cerimoniali collettivi, le paure e i tabu, il clero e la religiosità popolare, la gastronomia contadina, l'interpretazione dei sogni, la galassia dei giochi e del tempo libero, la morte ed il pianto rituale, la struttura della società contadina e delle classi sociali.`,
     href: "/books/atella-del-villaggio-preglobale.pdf",
   },
@@ -65,7 +65,8 @@ const books = [
     anno: 2004,
     tags: ["Scrittura Creativa"],
     href: "/books/racconti-dei-solsisti.pdf",
-    description: `lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut semper libero.`,
+    description:
+      "Sembra arduo oggi, nell'era postgutemberghiana, su cui incombe la minaccia dell'analfabetismo di ritorno, non alimentato o confortato dalla memoria, riuscire a motivare insegnanti ed alunni a dare ed aggiungere valore alla lettura del passato.",
   },
   {
     titolo: "La Memoria della Oralità",
@@ -80,7 +81,7 @@ const books = [
     tags: ["Scrittura Creativa"],
     href: "/books/laboratorio-scrittura-creativa-4.pdf",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut semper libero.",
+      'Umberto Eco, nella Presentazione de I Draghi locopei I di Ersilia Zamponi (Einaudi), all\'incipit: "Ci lamentiamo che i nostri ragazzi, spendendo ore e ore alla tv, non siano più capaci di parlare e usare bene la lingua. Basterebbe insegnargli che con la lingua si può giocare, e si divertirebbero persino ad andare a caccia di errori sintattici dei presentatori tv "',
   },
   {
     titolo: "Laboratorio di Scrittura Creativa 5",
@@ -88,14 +89,14 @@ const books = [
     tags: ["Scrittura Creativa"],
     href: "/books/laboratorio-scrittura-creativa-5.pdf",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut semper libero.",
+      "Negli anni trenta Lev. S. Vygotskij ancorò la creatività ad un bisogno primario dell'essere umano, il quale si realizza, egli affermò, creando. Da questa \"forza umanizzante dell'Io\" scaturisce il diritto dell'uomo ad essere se stesso:fruitore e produttore di cultura.",
   },
   {
     titolo: "Fabulandia 1",
     anno: 2009,
     tags: ["Scrittura Creativa"],
     href: "/books/fabulandia-1.pdf",
-    description: `Questo libro è stato "immaginato" e confezionato per i semplici, dai 6 ai 90 anni, fabulanauti nella Galassia degli Arcani e degli Stupori, di Mondi incantati altri e di Epoche concluse, dei Portenti e dei Sogni, delle Metafore, dei Miti e dei Simboli, utili contravveleni al disincanto del Reale, strumenti per fronteggiare Quotidianità e Presente ostile.`,
+    description: `Il presente Volume, frutto del lavoro serio e continuo durante l'intero anno scolastico 2008/09 degli alunni delle classi I B e III C sotto la sapiente guida dei docenti d'Annucci e Rosati, si pone sicuramente come grande esempio di didattica attiva e creativa.`,
   },
   {
     titolo: "Fabulandia 2",
@@ -123,7 +124,7 @@ const books = [
     anno: 2012,
     tags: ["Scrittura Creativa"],
     href: `/books/creo-ergo-sum.pdf`,
-    description: `Se volete essere creatii'i, rimanete bambini, con la creatività e la fantasia che contraddistingue i bambini prima che siano de.formati dalla società degli adulti. (Jean Piagct)`,
+    description: `Se volete essere creativi, rimanete bambini, con la creatività e la fantasia che contraddistingue i bambini prima che siano de.formati dalla società degli adulti. (Jean Piaget)`,
   },
   {
     titolo: "Fedora, la donna tradita da un fiore",
@@ -139,6 +140,13 @@ const books = [
     tags: ["Teatro"],
     href: `/books/bianchina.pdf`,
     description: `Uno spaccato di un possibile vissuto, contestualizzato agli anni 40/50 del Novecento. L'esilarante episodio immaginario stigmatizza come il tenace, secolare radicamento della superstizione popolare non arretra neanche di fronte all'evidenza scientifica. Un altro aspetto - sotteso - riguarda il disprezzo e l'irrisione delle classi sociali proletarie da parte della borghesia "del sapere e del potere", nutritasi, per decenni, di ideologia fascista.`,
+  },
+  {
+    titolo: "Affacci sul Novecento",
+    anno: 2023,
+    tags: ["Satira in Vernacolo"],
+    href: `/books/affacci-novecento.pdf`,
+    description: `C’è voluto un secolo intero, il Novecento, per stabilire definitivamente che il dialetto ha la stessa dignità di una lingua, almeno dal punto di vista letterario, anzi è una lingua a tutti gli effetti con le sue regole grammaticali, le sue norme, addirittura con il vanto di essere qualcosa assai più ricercato dell’italiano comune.`,
   },
 ];
 
@@ -157,7 +165,7 @@ export const Books = () => {
             <Link
               href={b.href}
               target="_blank"
-              className="p-2 hover:ring-1 hover:shadow-lg rounded-xl ring-red-500"
+              className="p-4 hover:ring-1 hover:shadow-lg rounded-xl ring-red-300"
               key={b.titolo}
             >
               <article className="flex max-w-xl  flex-col items-start justify-between">
