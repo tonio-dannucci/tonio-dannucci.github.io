@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export const Tonio = () => {
   return (
     <section className="overflow-hidden bg-white">
@@ -72,7 +70,7 @@ export const Tonio = () => {
 
         <div className="relative lg:flex lg:items-center">
           <div className="hidden lg:block lg:flex-shrink-0">
-            <Image
+            <img
               width={256}
               height={256}
               className="h-64 w-64 rounded-xl xl:h-80 xl:w-80"
@@ -85,7 +83,7 @@ export const Tonio = () => {
             <footer className="">
               <div className="flex">
                 <div className="flex-shrink-0 lg:hidden">
-                  <Image
+                  <img
                     width={96}
                     height={96}
                     className="h-24 w-24 rounded-xl"
