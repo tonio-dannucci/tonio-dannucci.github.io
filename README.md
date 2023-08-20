@@ -4,6 +4,6 @@ https://tonio-dannucci.github.io/
 
 ![Sito di Tonio d'Annucci](./.imgs/screen.png)
 
-Il sito è stato implementato da [Ludovico Russo](github.com/ludusrusso) e deployato tramite github pages.
+Il sito è stato implementato da [Ludovico Russo](https://github.com/ludusrusso) e deployato tramite github pages.
 
 Il sito è scritto in NextJS.
