@@ -104,18 +104,65 @@ export const Tonio = () => {
               </div>
             </footer>
             <blockquote className="relative">
-              <div className="text-md leading-2 font-medium text-gray-700 lg:text-xl mt-4">
+              <div className="text-md leading-2 text-gray-700 lg:text-xl mt-4">
                 <p>
                   Nato ad Atella (PZ) il 26/05/1944. Maestro elementare
                   (1968-2011) ha realizzato numerosi progetti di innovazione
-                  didattica. Come curatore del volumetto{" "}
-                  <em>La Pace s&apos;impara</em> (1995) registra un elogio
-                  autografo di Roberto Fieschi (Università di Parma). Il saggio
-                  di demo-antropologia Atella del
+                  didattica.
+                </p>
+                <p>
+                  Come curatore del volumetto <em>La Pace s&apos;impara</em>{" "}
+                  (1995) registra un elogio autografo di Roberto Fieschi
+                  (Università di Parma). Il saggio di demo-antropologia Atella
+                  del
                   <em> Villaggio pre-Globale</em> (1996) viene attinto per tesi
                   di laurea. Ha prodotto (1997-2012) 12 volumi di scrittura
-                  creativa nelle scuole di vario grado.
+                  creativa nelle scuole di vario grado.{" "}
                 </p>
+                <p className="mt-4">Tra i più apprezzati:</p>
+                <ul>
+                  <li>
+                    <em>Laboratorio di Scrittura Creativa 2. </em>(1997)
+                    Prefazione di Daniele Giancane (Università di Bari) e con
+                    lode di Kenneth Koch (Columbia University, New York);
+                  </li>
+                  <li>
+                    <em>Laboratorio di Scrittura Creativa 3.</em> (Ministero di
+                    Grazia e Giustizia) realizzato con 13 detenuti f.p.m.
+                    Penitenziario di Melfi (2000);
+                  </li>
+                  <li>
+                    {" "}
+                    <em>Le Stanze della Memoria</em>, (2003) è nella
+                    bibliografia del romanzo Carmine Pascià di Gian Antonio
+                    Stella, Rizzoli 2008;
+                  </li>
+                  <li>
+                    {" "}
+                    <em>Fabulandia 1.</em>;
+                  </li>{" "}
+                  <li>
+                    <em>Fabulandia 2.</em> (2009);
+                  </li>
+                  <li>
+                    <em>Titicchio Taticchio</em> (2010);
+                  </li>
+                  <li>
+                    <em>Creo ergo sum</em> (2011); Prefazione di Sofia Galella;
+                  </li>
+                  <li>
+                    <em>L’Acquario di Chandra</em> - poesie (20199 Prefazione di
+                    Sofia Galella;
+                  </li>
+                  <li>
+                    {" "}
+                    <em>L’Acquario di Chandra</em> - poesie (2019)
+                  </li>
+                  <li>
+                    <em>Affacci sul Novecento (2023)</em> Prefazione Giuseppe
+                    Lupo (Università Cattolica - Milano)
+                  </li>
+                </ul>
               </div>
               <YoutubeLink />
             </blockquote>
