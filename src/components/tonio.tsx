@@ -151,11 +151,6 @@ export const Tonio = () => {
                     <em>Creo ergo sum</em> (2011); Prefazione di Sofia Galella;
                   </li>
                   <li>
-                    <em>L’Acquario di Chandra</em> - poesie (20199 Prefazione di
-                    Sofia Galella;
-                  </li>
-                  <li>
-                    {" "}
                     <em>L’Acquario di Chandra</em> - poesie (2019)
                   </li>
                   <li>
