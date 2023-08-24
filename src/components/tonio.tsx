@@ -113,11 +113,10 @@ export const Tonio = () => {
                 <p>
                   Come curatore del volumetto <em>La Pace s&apos;impara</em>{" "}
                   (1995) registra un elogio autografo di Roberto Fieschi
-                  (Università di Parma). Il saggio di demo-antropologia Atella
-                  del
-                  <em> Villaggio pre-Globale</em> (1996) viene attinto per tesi
-                  di laurea. Ha prodotto (1997-2012) 12 volumi di scrittura
-                  creativa nelle scuole di vario grado.{" "}
+                  (Università di Parma). Il saggio di demo-antropologia{" "}
+                  <em> Atella del Villaggio pre-Globale</em> (1996) viene
+                  attinto per tesi di laurea. Ha prodotto (1997-2012) 12 volumi
+                  di scrittura creativa nelle scuole di vario grado.{" "}
                 </p>
                 <p className="mt-4">Tra i più apprezzati:</p>
                 <ul>
@@ -134,8 +133,8 @@ export const Tonio = () => {
                   <li>
                     {" "}
                     <em>Le Stanze della Memoria</em>, (2003) è nella
-                    bibliografia del romanzo Carmine Pascià di Gian Antonio
-                    Stella, Rizzoli 2008;
+                    bibliografia del romanzo <em>Carmine Pascià</em> di Gian
+                    Antonio Stella, Rizzoli 2008;
                   </li>
                   <li>
                     {" "}
