@@ -97,7 +97,7 @@ export const Tonio = () => {
                       Tonio d&apos;Annucci {"     "}
                     </div>
                     <div className="text-lg mt-2 font-medium leading-6 text-red-600">
-                      Maestro e Scrittore Lucano
+                      Maestro e Autore Lucano
                     </div>
                   </div>
                 </div>
