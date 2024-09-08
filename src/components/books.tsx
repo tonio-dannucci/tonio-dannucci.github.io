@@ -148,6 +148,13 @@ const books = [
     href: `/books/affacci-novecento.pdf`,
     description: `C’è voluto un secolo intero, il Novecento, per stabilire definitivamente che il dialetto ha la stessa dignità di una lingua, almeno dal punto di vista letterario, anzi è una lingua a tutti gli effetti con le sue regole grammaticali, le sue norme, addirittura con il vanto di essere qualcosa assai più ricercato dell’italiano comune.`,
   },
+  {
+    titolo: "100 e più del Novecento",
+    anno: 2024,
+    tags: ["Satira in Vernacolo"],
+    href: `/books/100-piu-novecento.pdf`,
+    description: `Questa raccolta vuole essere la prosecuzione del precedente volumetto Affacci sul Novecento (2023), prefazione di Giuseppe Lupo.`,
+  },
 ];
 
 export const Books = () => {
