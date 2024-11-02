@@ -156,6 +156,10 @@ export const Tonio = () => {
                     <em>Affacci sul Novecento (2023)</em> Prefazione Giuseppe
                     Lupo (Università Cattolica - Milano)
                   </li>
+                  <li>
+                    <em>100 e più del Novecento (2024)</em> Prefazione Giuseppe
+                    Lupo (Università Cattolica - Milano)
+                  </li>
                 </ul>
               </div>
               <YoutubeLink />
