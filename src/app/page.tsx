@@ -1,12 +1,11 @@
 import { Books } from "@/components/books";
 import { Footer } from "@/components/footer";
 import { Tonio } from "@/components/tonio";
-import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <main>
+      <main id="main-content" role="main">
         <Tonio />
         <Books />
       </main>

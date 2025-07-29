@@ -158,49 +158,143 @@ const books = [
 ];
 
 export const Books = () => {
+  const getCategoryColor = (category: string) => {
+    const colors = {
+      'Etno-Antropologia': 'bg-blue-50/60 border-blue-300/60',
+      'Scrittura Creativa': 'bg-green-50/60 border-green-300/60',
+      'Poesia': 'bg-purple-50/60 border-purple-300/60',
+      'Satira in Vernacolo': 'bg-orange-50/60 border-orange-300/60',
+      'Teatro': 'bg-red-50/60 border-red-300/60',
+      'Memoriale': 'bg-gray-50/60 border-gray-300/60'
+    };
+    return colors[category as keyof typeof colors] || 'bg-gray-50/60 border-gray-300/60';
+  };
+
   return (
-    <div className="bg-white py-14">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            La mia Bibliografia
+    <section className="py-16 bg-white" id="bibliografia">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 sm:text-4xl">
+            Bibliografia Completa
           </h2>
-          <p className="mt-2 text-lg leading-8 text-gray-600"></p>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Oltre 30 pubblicazioni nell&apos;arco di tre decenni (1995-2024), 
+            dalla demo-antropologia alla scrittura creativa, dalla poesia in italiano 
+            alle opere in dialetto lucano.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-2">
+            <span className="inline-flex items-center px-3 py-1 text-sm font-medium text-gray-600 bg-gray-50 rounded-full border">
+              {books.length} opere totali
+            </span>
+            <span className="inline-flex items-center px-3 py-1 text-sm font-medium text-gray-600 bg-gray-50 rounded-full border">
+              Dal 1995 al 2024
+            </span>
+          </div>
         </div>
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {books.map((b) => (
-            <Link
-              href={b.href}
-              target="_blank"
-              className="p-4 hover:ring-1 hover:shadow-lg rounded-xl ring-red-300"
-              key={b.titolo}
-            >
-              <article className="flex max-w-xl  flex-col items-start justify-between">
-                <div className="flex items-center gap-x-4 text-xs">
-                  <span className="text-gray-500">Anno {b.anno}</span>
-                  {b.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <div className="relative">
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-red-600 ">
-                    <span className="absolute inset-0" />
-                    {b.titolo}
-                  </h3>
-                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    {b.description}
-                  </p>
-                </div>
-              </article>
-            </Link>
-          ))}
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {books
+            .sort((a, b) => b.anno - a.anno)
+            .map((book) => {
+              const category = book.tags[0] || 'Altri';
+              return (
+                <Link
+                  href={book.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={book.titolo}
+                  className="group block"
+                  aria-label={`Leggi "${book.titolo}" (${book.anno}) - si apre in una nuova finestra`}
+                >
+                  <article className={`h-full ${getCategoryColor(category)} rounded-lg border p-8 transition-all duration-200 group-hover:shadow-lg group-hover:border-gray-400`}>
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex items-center gap-3">
+                        <span className="inline-flex items-center px-3 py-1 text-sm font-medium bg-white text-gray-700 rounded-full border shadow-sm">
+                          {book.anno}
+                        </span>
+                        {book.editore && (
+                          <span className="inline-flex items-center px-3 py-1 text-sm font-medium bg-white/90 text-gray-600 rounded-full border">
+                            {book.editore}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <h4 className="text-xl font-bold text-gray-900 mb-4 line-clamp-2 leading-tight">
+                      {book.titolo}
+                    </h4>
+
+                    {book.ISBN && (
+                      <p className="text-sm text-gray-500 mb-4 font-mono bg-white/60 px-3 py-1 rounded">
+                        ISBN: {book.ISBN}
+                      </p>
+                    )}
+
+                    <p className="text-gray-600 line-clamp-5 leading-relaxed mb-6 text-base">
+                      {book.description}
+                    </p>
+
+                    <div className="flex items-center justify-between mt-auto">
+                      <div className="flex flex-wrap gap-2">
+                        {book.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="inline-flex items-center px-3 py-1 text-sm font-medium bg-white text-gray-600 rounded-full border"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center text-gray-600 text-sm font-medium group-hover:text-gray-800 ml-4">
+                        Leggi
+                        <svg 
+                          className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </article>
+                </Link>
+              );
+            })}
+        </div>
+
+        <div className="mt-16 text-center">
+          <div className="bg-gray-50 rounded-lg p-8 border">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Un percorso di ricerca e creatività
+            </h3>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Ogni pubblicazione rappresenta un tassello del lungo percorso di ricerca 
+              e sperimentazione pedagogica di Tonio d&apos;Annucci, dalla valorizzazione 
+              delle tradizioni lucane all&apos;innovazione didattica nella scuola italiana.
+            </p>
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-500">
+              <div>
+                <div className="font-semibold text-gray-700 text-lg">1995</div>
+                <div>Prima pubblicazione</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-700 text-lg">2024</div>
+                <div>Ultima opera</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-700 text-lg">12</div>
+                <div>Laboratori creativi</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-700 text-lg">3</div>
+                <div>Decenni di attività</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
