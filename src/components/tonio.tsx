@@ -813,7 +813,7 @@ function RecognitionsSection() {
               </div>
 
               <div className="border-l-4 border-purple-600 pl-4">
-                <h4 className="font-semibold text-gray-900">Roberto Freschi</h4>
+                <h4 className="font-semibold text-gray-900">Roberto Fieschi</h4>
                 <p className="text-sm text-gray-600">
                   Docente universitario di Fisica
                 </p>
