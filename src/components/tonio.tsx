@@ -36,7 +36,7 @@ function HeroSection() {
                 height={320}
                 className="h-80 w-80 rounded-xl shadow-xl xl:h-96 xl:w-96 object-cover"
                 src="/tonio.jpg"
-                alt="Ritratto di Tonio d'Annucci, maestro elementare e scrittore lucano nato ad Atella nel 1944, pioniere dell'innovazione pedagogica in Basilicata"
+                alt="Ritratto di Tonio d'Annucci, maestro elementare e autore lucano nato ad Atella nel 1944, pioniere dell'innovazione pedagogica in Basilicata"
                 itemProp="image"
                 loading="eager"
               />
@@ -77,7 +77,7 @@ function HeroSection() {
                       className="text-xl mt-3 font-semibold leading-relaxed text-amber-700 lg:text-2xl"
                       itemProp="jobTitle"
                     >
-                      Maestro elementare, scrittore e promotore culturale lucano
+                      Maestro elementare, autore e promotore culturale lucano
                     </p>
 
                     <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
@@ -122,7 +122,7 @@ function HeroSection() {
                   <strong className="text-orange-700">quattro decenni</strong>{" "}
                   alla sperimentazione didattica e alla valorizzazione della{" "}
                   <em className="text-amber-600">cultura lucana</em> attraverso
-                  la scrittura creativa.
+                  la scrittura creativa e un saggio di antropologia culturale.
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3 text-sm">
@@ -241,7 +241,7 @@ function BiographySection() {
               <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
                 <p className="text-lg leading-relaxed mb-0">
                   <strong className="text-amber-800">
-                    Antonio &quot;Tonio&quot; d&apos;Annucci
+                    Tonio d&apos;Annucci
                   </strong>
                   , nato il{" "}
                   <span className="font-semibold text-gray-800">
@@ -267,7 +267,7 @@ function BiographySection() {
                   Nel corso di oltre{" "}
                   <strong className="text-blue-700">quattro decenni</strong> di
                   attività educativa, ha ideato e realizzato numerosi{" "}
-                  <em className="text-blue-600">progetti sperimentali</em>
+                  <em className="text-blue-600">progetti sperimentali</em>{" "}
                   all&apos;interno della scuola primaria, mirando a rinnovare i
                   metodi pedagogici tradizionali e a{" "}
                   <strong className="text-blue-700">
@@ -720,7 +720,7 @@ function DigitalPresenceSection() {
                 </h4>
                 <p className="text-gray-700">
                   &quot;Poesie de l&apos;Acquario di Chandra&quot; - La poesia
-                  lucana sui dispositivi intelligenti
+                  lucana sui dispositivi intelligenti - a cura di Ludovico Russo
                 </p>
               </div>
               <div className="border-l-4 border-blue-400 pl-4">
@@ -768,71 +768,59 @@ function RecognitionsSection() {
             <h3 className="text-xl font-bold text-gray-900 mb-6">
               Riconoscimenti Accademici
             </h3>
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">KC</span>
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-gray-900">Kenneth Koch</h4>
-                  <p className="text-sm text-gray-600">
-                    Columbia University, New York
-                  </p>
-                  <p className="text-gray-700 mt-2">
-                    Lettera di apprezzamento: &quot;assolutamente
-                    deliziato&quot; dal lavoro nei laboratori di scrittura
-                    creativa
-                  </p>
-                </div>
+            <div className="space-y-4">
+              <div className="border-l-4 border-amber-600 pl-4">
+                <h4 className="font-semibold text-gray-900">Kenneth Koch</h4>
+                <p className="text-sm text-gray-600">
+                  Columbia University, New York
+                </p>
+                <p className="text-gray-700 mt-2">
+                  Lettera di apprezzamento: &quot;assolutamente deliziato&quot;
+                  dal lavoro nei laboratori di scrittura creativa
+                </p>
               </div>
 
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">DG</span>
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-gray-900">
-                    Daniele Giancane
-                  </h4>
-                  <p className="text-sm text-gray-600">Università di Bari</p>
-                  <p className="text-gray-700 mt-2">
-                    Prefazioni e collaborazioni pedagogiche
-                  </p>
-                </div>
+              <div className="border-l-4 border-blue-600 pl-4">
+                <h4 className="font-semibold text-gray-900">
+                  Daniele Giancane
+                </h4>
+                <p className="text-sm text-gray-600">Università di Bari</p>
+                <p className="text-gray-700 mt-2">
+                  Prefazioni e collaborazioni pedagogiche
+                </p>
               </div>
 
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">GL</span>
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-gray-900">Giuseppe Lupo</h4>
-                  <p className="text-sm text-gray-600">
-                    Scrittore e docente universitario
-                  </p>
-                  <p className="text-gray-700 mt-2">
-                    Prefazioni per le opere dialettali recenti (2023-2024)
-                  </p>
-                </div>
+              <div className="border-l-4 border-green-600 pl-4">
+                <h4 className="font-semibold text-gray-900">Giuseppe Lupo</h4>
+                <p className="text-sm text-gray-600">
+                  Scrittore e docente universitario
+                </p>
+                <p className="text-gray-700 mt-2">
+                  Prefazioni per le opere dialettali recenti (2023-2024)
+                </p>
               </div>
 
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">GS</span>
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-gray-900">
-                    Gian Antonio Stella
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Giornalista e scrittore
-                  </p>
-                  <p className="text-gray-700 mt-2">
-                    Citazione di &quot;Le Stanze della Memoria&quot; nella
-                    bibliografia del romanzo &quot;Carmine Pascià&quot;
-                    (Rizzoli, 2008)
-                  </p>
-                </div>
+              <div className="border-l-4 border-red-600 pl-4">
+                <h4 className="font-semibold text-gray-900">
+                  Gian Antonio Stella
+                </h4>
+                <p className="text-sm text-gray-600">Giornalista e scrittore</p>
+                <p className="text-gray-700 mt-2">
+                  Citazione di &quot;Le Stanze della Memoria&quot; nella
+                  bibliografia del romanzo &quot;Carmine Pascià&quot; (Rizzoli,
+                  2008)
+                </p>
+              </div>
+
+              <div className="border-l-4 border-purple-600 pl-4">
+                <h4 className="font-semibold text-gray-900">Roberto Freschi</h4>
+                <p className="text-sm text-gray-600">
+                  Docente universitario di Fisica
+                </p>
+                <p className="text-gray-700 mt-2">
+                  Ringraziamento per la citazione nella nell&apos;opera{" "}
+                  <em>Pace s&apos;impara</em>
+                </p>
               </div>
             </div>
           </div>
@@ -849,6 +837,16 @@ function RecognitionsSection() {
                 <p className="text-gray-700">
                   Partnership storica dal 1995 - Pubblicazione di opere
                   principali e supporto ad altri scrittori locali
+                </p>
+              </div>
+
+              <div className="border-l-4 border-purple-600 pl-4">
+                <h4 className="font-semibold text-gray-900">
+                  Regione Basilicata
+                </h4>
+                <p className="text-gray-700">
+                  Contributo per concorso &quot;1996: Anno dell&apos;identità
+                  Lucana&quot;
                 </p>
               </div>
 
@@ -872,7 +870,7 @@ function RecognitionsSection() {
                 </p>
               </div>
 
-              <div className="border-l-4 border-purple-600 pl-4">
+              <div className="border-l-4 border-red-600 pl-4">
                 <h4 className="font-semibold text-gray-900">
                   Provveditorato agli Studi
                 </h4>
