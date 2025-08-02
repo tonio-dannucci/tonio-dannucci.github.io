@@ -27,14 +27,13 @@ function HeroSection() {
 
       <div className="relative mx-auto max-w-screen-xl px-4 pb-16 pt-24 sm:px-6 lg:px-8 lg:py-24">
         <div className="relative lg:flex lg:items-center lg:gap-12">
-          {/* Image section with enhanced styling */}
-          <div className="hidden lg:block lg:flex-shrink-0 relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-amber-400/20 to-orange-400/20 rounded-2xl blur-lg"></div>
-            <div className="relative bg-white/80 backdrop-blur-sm p-3 rounded-2xl shadow-2xl border border-white/50">
+          {/* Image section with clean design */}
+          <div className="hidden lg:block lg:flex-shrink-0">
+            <div className="relative">
               <img
                 width={320}
                 height={320}
-                className="h-80 w-80 rounded-xl shadow-xl xl:h-96 xl:w-96 object-cover"
+                className="h-80 w-80 xl:h-96 xl:w-96 rounded-2xl object-cover shadow-lg"
                 src="/tonio.jpg"
                 alt="Ritratto di Tonio d'Annucci, maestro elementare e autore lucano nato ad Atella nel 1944, pioniere dell'innovazione pedagogica in Basilicata"
                 itemProp="image"
@@ -46,21 +45,18 @@ function HeroSection() {
           <div className="relative lg:flex-1">
             <header>
               <div className="flex">
-                <div className="flex-shrink-0 lg:hidden relative">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-amber-400/30 to-orange-400/30 rounded-xl blur-sm"></div>
-                  <div className="relative bg-white/80 backdrop-blur-sm p-2 rounded-xl shadow-lg border border-white/50">
-                    <img
-                      width={96}
-                      height={96}
-                      className="h-24 w-24 rounded-lg object-cover"
-                      src="/tonio.jpg"
-                      alt="Ritratto di Tonio d'Annucci, maestro elementare e scrittore lucano"
-                      itemProp="image"
-                      loading="eager"
-                    />
-                  </div>
+                <div className="flex-shrink-0 lg:hidden">
+                  <img
+                    width={96}
+                    height={96}
+                    className="h-20 w-20 sm:h-24 sm:w-24 rounded-xl object-cover shadow-md"
+                    src="/tonio.jpg"
+                    alt="Ritratto di Tonio d'Annucci, maestro elementare e autore lucano"
+                    itemProp="image"
+                    loading="eager"
+                  />
                 </div>
-                <div className="flex ml-6 lg:ml-0">
+                <div className="flex ml-4 sm:ml-6 lg:ml-0">
                   <div className="mb-6 lg:ml-0">
                     <div className="mb-4">
                       <div className="inline-flex items-center px-3 py-1 bg-amber-100/60 backdrop-blur-sm text-amber-800 text-sm font-semibold rounded-full border border-amber-200/30 mb-4">
@@ -68,13 +64,13 @@ function HeroSection() {
                       </div>
                     </div>
                     <h1
-                      className="text-4xl font-bold leading-tight text-gray-900 lg:text-5xl xl:text-6xl bg-gradient-to-r from-gray-900 via-amber-800 to-orange-800 bg-clip-text text-transparent"
+                      className="text-3xl sm:text-4xl font-bold leading-tight text-gray-900 lg:text-5xl xl:text-6xl bg-gradient-to-r from-gray-900 via-amber-800 to-orange-800 bg-clip-text text-transparent"
                       itemProp="name"
                     >
                       Tonio d&apos;Annucci
                     </h1>
                     <p
-                      className="text-xl mt-3 font-semibold leading-relaxed text-amber-700 lg:text-2xl"
+                      className="text-lg sm:text-xl mt-3 font-semibold leading-relaxed text-amber-700 lg:text-2xl"
                       itemProp="jobTitle"
                     >
                       Maestro elementare, autore e promotore culturale lucano
@@ -111,7 +107,7 @@ function HeroSection() {
             <div className="mt-8">
               <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-lg">
                 <p
-                  className="text-lg leading-relaxed text-gray-700 lg:text-xl font-medium"
+                  className="text-base sm:text-lg leading-relaxed text-gray-700 lg:text-xl font-medium"
                   itemProp="description"
                 >
                   <span className="text-amber-700 font-semibold">
@@ -139,16 +135,16 @@ function HeroSection() {
               </div>
             </div>
 
-            <nav className="mt-10" aria-label="Navigazione sezioni principali">
-              <div className="flex flex-wrap gap-4">
+            <nav className="mt-8 sm:mt-10" aria-label="Navigazione sezioni principali">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <a
                   href="#bibliografia"
-                  className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl hover:from-amber-700 hover:to-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                  className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl hover:from-amber-700 hover:to-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
                   aria-describedby="bibliografia-desc"
                 >
                   Scopri le opere
                   <svg
-                    className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+                    className="w-4 h-4 sm:w-5 sm:h-5 ml-2 transition-transform group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -166,12 +162,12 @@ function HeroSection() {
                 </span>
                 <a
                   href="#progetti"
-                  className="group inline-flex items-center px-8 py-4 bg-white/60 backdrop-blur-sm border-2 border-amber-600 text-amber-700 font-bold rounded-xl hover:bg-amber-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                  className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white/60 backdrop-blur-sm border-2 border-amber-600 text-amber-700 font-bold rounded-xl hover:bg-amber-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
                   aria-describedby="progetti-desc"
                 >
                   I progetti educativi
                   <svg
-                    className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+                    className="w-4 h-4 sm:w-5 sm:h-5 ml-2 transition-transform group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

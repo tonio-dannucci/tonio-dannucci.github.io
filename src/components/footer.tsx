@@ -10,9 +10,9 @@ export const Footer = () => {
                 Tonio d&apos;Annucci
               </h3>
               <p className="text-lg text-gray-700 max-w-2xl">
-                Maestro elementare, scrittore e promotore culturale lucano.
-                Oltre quattro decenni dedicati all&apos;innovazione pedagogica e
-                alla valorizzazione della cultura di Basilicata.
+                Maestro elementare, autore e promotore culturale lucano. Oltre
+                quattro decenni dedicati all&apos;innovazione pedagogica e alla
+                valorizzazione della cultura di Basilicata.
               </p>
             </div>
 

@@ -5,7 +5,7 @@
 ### 1. Header/Hero Section
 
 - **Nome completo**: Tonio d'Annucci
-- **Sottotitolo**: Maestro elementare, scrittore e promotore culturale lucano
+- **Sottotitolo**: Maestro elementare, autore e promotore culturale lucano
 - **Date principali**: Nato il 26 maggio 1944 ad Atella (PZ)
 - **Immagine**: Foto profilo dell'autore
 - **Link rapidi**: Bibliografia, Progetti Educativi, Opere Multimediali

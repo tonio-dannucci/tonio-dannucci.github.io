@@ -1,6 +1,6 @@
 Tonio d'Annucci
 Biografia
-Tonio d’Annucci (Antonio d’Annucci), nato il 26 maggio 1944 ad Atella in provincia di Potenza, è un maestro elementare, scrittore e promotore culturale lucano
+Tonio d’Annucci (Antonio d’Annucci), nato il 26 maggio 1944 ad Atella in provincia di Potenza, è un maestro elementare, autore e promotore culturale lucano
 tonio-dannucci.github.io
 . Ha intrapreso la carriera nell’insegnamento nel 1968 e ha insegnato nella scuola primaria fino al 2011, distinguendosi per il suo approccio didattico innovativo
 tonio-dannucci.github.io
