@@ -160,14 +160,17 @@ const books = [
 export const Books = () => {
   const getCategoryColor = (category: string) => {
     const colors = {
-      'Etno-Antropologia': 'bg-blue-50/60 border-blue-300/60',
-      'Scrittura Creativa': 'bg-green-50/60 border-green-300/60',
-      'Poesia': 'bg-purple-50/60 border-purple-300/60',
-      'Satira in Vernacolo': 'bg-orange-50/60 border-orange-300/60',
-      'Teatro': 'bg-red-50/60 border-red-300/60',
-      'Memoriale': 'bg-gray-50/60 border-gray-300/60'
+      "Etno-Antropologia": "bg-blue-50/60 border-blue-300/60",
+      "Scrittura Creativa": "bg-green-50/60 border-green-300/60",
+      Poesia: "bg-purple-50/60 border-purple-300/60",
+      "Satira in Vernacolo": "bg-orange-50/60 border-orange-300/60",
+      Teatro: "bg-red-50/60 border-red-300/60",
+      Memoriale: "bg-gray-50/60 border-gray-300/60",
     };
-    return colors[category as keyof typeof colors] || 'bg-gray-50/60 border-gray-300/60';
+    return (
+      colors[category as keyof typeof colors] ||
+      "bg-gray-50/60 border-gray-300/60"
+    );
   };
 
   return (
@@ -178,9 +181,9 @@ export const Books = () => {
             Bibliografia Completa
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Oltre 30 pubblicazioni nell&apos;arco di tre decenni (1995-2024), 
-            dalla demo-antropologia alla scrittura creativa, dalla poesia in italiano 
-            alle opere in dialetto lucano.
+            oltre 20 pubblicazioni nell&apos;arco di tre decenni (1995-2024),
+            dalla demo-antropologia alla scrittura creativa, dalla poesia in
+            italiano alle opere in dialetto lucano.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-2">
             <span className="inline-flex items-center px-3 py-1 text-sm font-medium text-gray-600 bg-gray-50 rounded-full border">
@@ -196,7 +199,7 @@ export const Books = () => {
           {books
             .sort((a, b) => b.anno - a.anno)
             .map((book) => {
-              const category = book.tags[0] || 'Altri';
+              const category = book.tags[0] || "Altri";
               return (
                 <Link
                   href={book.href}
@@ -206,7 +209,11 @@ export const Books = () => {
                   className="group block"
                   aria-label={`Leggi "${book.titolo}" (${book.anno}) - si apre in una nuova finestra`}
                 >
-                  <article className={`h-full ${getCategoryColor(category)} rounded-lg border p-8 transition-all duration-200 group-hover:shadow-lg group-hover:border-gray-400`}>
+                  <article
+                    className={`h-full ${getCategoryColor(
+                      category
+                    )} rounded-lg border p-8 transition-all duration-200 group-hover:shadow-lg group-hover:border-gray-400`}
+                  >
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center gap-3">
                         <span className="inline-flex items-center px-3 py-1 text-sm font-medium bg-white text-gray-700 rounded-full border shadow-sm">
@@ -247,14 +254,19 @@ export const Books = () => {
                       </div>
                       <div className="flex items-center text-gray-600 text-sm font-medium group-hover:text-gray-800 ml-4">
                         Leggi
-                        <svg 
-                          className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" 
-                          fill="none" 
-                          stroke="currentColor" 
+                        <svg
+                          className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
+                          fill="none"
+                          stroke="currentColor"
                           viewBox="0 0 24 24"
                           aria-hidden="true"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </div>
                     </div>
@@ -270,9 +282,10 @@ export const Books = () => {
               Un percorso di ricerca e creatività
             </h3>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Ogni pubblicazione rappresenta un tassello del lungo percorso di ricerca 
-              e sperimentazione pedagogica di Tonio d&apos;Annucci, dalla valorizzazione 
-              delle tradizioni lucane all&apos;innovazione didattica nella scuola italiana.
+              Ogni pubblicazione rappresenta un tassello del lungo percorso di
+              ricerca e sperimentazione pedagogica di Tonio d&apos;Annucci,
+              dalla valorizzazione delle tradizioni lucane all&apos;innovazione
+              didattica nella scuola italiana.
             </p>
             <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-500">
               <div>

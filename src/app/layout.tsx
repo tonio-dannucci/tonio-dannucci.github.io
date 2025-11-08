@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Tonio d'Annucci",
   },
   description:
-    "Antonio 'Tonio' d'Annucci (1944-): maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata con oltre 30 pubblicazioni e 43 anni di carriera didattica (1968-2011). Creatore dei laboratori di scrittura creativa apprezzati da Kenneth Koch (Columbia University).",
+    "Antonio 'Tonio' d'Annucci (1944-): maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata con oltre 20 pubblicazioni e 43 anni di carriera didattica (1968-2011). Creatore dei laboratori di scrittura creativa apprezzati da Kenneth Koch (Columbia University).",
   keywords: [
     "Tonio d'Annucci",
     "Antonio d'Annucci",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Tonio d'Annucci - Sito Ufficiale",
     title: "Tonio d'Annucci - Maestro, Autore e Innovatore Pedagogico Lucano",
     description:
-      "Maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata con oltre 30 pubblicazioni e laboratori di scrittura creativa.",
+      "Maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata con oltre 20 pubblicazioni e laboratori di scrittura creativa.",
     url: "https://tonio-dannucci.vercel.app",
     images: [
       {
@@ -112,7 +112,7 @@ export default function RootLayout({
       "Innovatore pedagogico",
     ],
     description:
-      "Maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata con oltre 30 pubblicazioni e 43 anni di carriera didattica.",
+      "Maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata con oltre 20 pubblicazioni e 43 anni di carriera didattica.",
     alumniOf: "Scuola Normale",
     worksFor: {
       "@type": "Organization",

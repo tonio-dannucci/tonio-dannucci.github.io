@@ -135,7 +135,10 @@ function HeroSection() {
               </div>
             </div>
 
-            <nav className="mt-8 sm:mt-10" aria-label="Navigazione sezioni principali">
+            <nav
+              className="mt-8 sm:mt-10"
+              aria-label="Navigazione sezioni principali"
+            >
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <a
                   href="#bibliografia"
@@ -158,7 +161,7 @@ function HeroSection() {
                   </svg>
                 </a>
                 <span id="bibliografia-desc" className="sr-only">
-                  Esplora la bibliografia completa di oltre 30 pubblicazioni
+                  Esplora la bibliografia completa di oltre 20 pubblicazioni
                 </span>
                 <a
                   href="#progetti"
