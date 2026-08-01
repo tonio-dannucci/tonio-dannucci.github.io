@@ -237,7 +237,7 @@ export const books: Book[] = [
     coverHeight: 1728,
     coverWidth: 1116,
     description:
-      "Serie di storie brevi che ritraggono la provincia italiana nel Novecento. D'Annucci osserva con ironia episodi comici e drammatici della vita ordinaria, catturando usi, costumi e dinamiche umane attraverso personaggi locali e situazioni quotidiane che compongono il tessuto sociale della comunità rurale.",
+      "Serie di storie brevi che ritraggono la provincia italiana nel Novecento. D'Annucci osserva con ironia episodi comici e drammatici della vita ordinaria, catturando usi, costumi e dinamiche umane attraverso personaggi locali e situazioni quotidiane che compongono il tessuto sociale della comunità rurale. Prefazione di Giuseppe Lupo.",
     href: "/books/affacci-novecento.pdf",
     tags: ["Satira in Vernacolo"],
     titolo: "Affacci sul Novecento",
@@ -248,7 +248,7 @@ export const books: Book[] = [
     coverHeight: 1840,
     coverWidth: 1208,
     description:
-      "Raccolta di scritti satirici in vernacolo che prosegue l'indagine sul Novecento italiano. L'autore delinea attraverso personaggi, aneddoti e accadimenti della società contemporanea gli stereotipi e gli archetipi umani, offrendo uno sguardo ironico sulle vicende storiche e politiche del secolo.",
+      "Raccolta di scritti satirici in vernacolo che prosegue l'indagine sul Novecento italiano. L'autore delinea attraverso personaggi, aneddoti e accadimenti della società contemporanea gli stereotipi e gli archetipi umani, offrendo uno sguardo ironico sulle vicende storiche e politiche del secolo. Prefazione di Giuseppe Lupo.",
     href: "/books/100-piu-novecento.pdf",
     tags: ["Satira in Vernacolo"],
     titolo: "100 e più del Novecento",
