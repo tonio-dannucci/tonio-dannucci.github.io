@@ -1,0 +1,7 @@
+allowBuilds:
+  sharp: true
+
+# Nested copies pulled in by Next.js still resolve to vulnerable releases.
+overrides:
+  sharp: ^0.35.3
+  postcss: ^8.5.25
