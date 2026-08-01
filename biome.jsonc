@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/biome/core", "ultracite/biome/next"],
+  "linter": {
+    "rules": {
+      "performance": {
+        // The site is a static export (`output: "export"`), so next/image would
+        // run unoptimized anyway. The two <img> tags are the above-the-fold
+        // portrait: already sized and eagerly loaded.
+        "noImgElement": "off"
+      }
+    }
+  }
+}

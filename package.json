@@ -1,20 +1,9 @@
 {
-  "name": "tonio-dannucci",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.1.2",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
-    "eslint": "8.47.0",
-    "eslint-config-next": "13.4.13",
     "next": "^16.2.12",
     "postcss": "^8.5.25",
     "react": "^19.2.8",
@@ -22,5 +11,19 @@
     "sharp": "^0.35.3",
     "tailwindcss": "4.3.3",
     "typescript": "^6.0.3"
-  }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.3",
+    "ultracite": "^7.9.4"
+  },
+  "name": "tonio-dannucci",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
+  },
+  "version": "0.1.0",
+  "private": true
 }

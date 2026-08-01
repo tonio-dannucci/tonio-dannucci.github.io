@@ -5,7 +5,7 @@ import { Tonio } from "@/components/tonio";
 export default function Home() {
   return (
     <>
-      <main id="main-content" role="main">
+      <main id="main-content">
         <Tonio />
         <Books />
       </main>
