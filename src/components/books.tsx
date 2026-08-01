@@ -155,6 +155,14 @@ const books = [
     href: `/books/100-piu-novecento.pdf`,
     description: `Questa raccolta vuole essere la prosecuzione del precedente volumetto Affacci sul Novecento (2023), prefazione di Giuseppe Lupo.`,
   },
+  {
+    titolo: "Tre finestre sul cortile minimale",
+    editore: "Edizioni Basiliskos",
+    anno: 2026,
+    tags: ["Satira", "Poesia"],
+    href: "/books/tre-finestre-sul-cortile-minimale.pdf",
+    description: `In un immaginario cortile minimale l'Autore declina per il Lettore molteplici registri narrativi inerenti tematiche che spaziano dalla irridente satira politica all'aforisma, dallo sguardo alla contemporaneità agli arcani del trascendente, dalla protervia dell'autocrate al narcisismo isterico del "politicume", dalle globali emergenze umanitarie ai fantasmi del passato, dalla banalità delle miserie umane all'anima azzurra della compassione, dal bullismo caricaturale dei potenti all'insolenza istrionica dell'ego, dalla efferatezza del male assoluto alla magnetica, intrigante bellezza della poesia. Ed altro ancora.`,
+  },
 ];
 
 export const Books = () => {
@@ -164,6 +172,7 @@ export const Books = () => {
       "Scrittura Creativa": "bg-green-50/60 border-green-300/60",
       Poesia: "bg-purple-50/60 border-purple-300/60",
       "Satira in Vernacolo": "bg-orange-50/60 border-orange-300/60",
+      Satira: "bg-amber-50/60 border-amber-300/60",
       Teatro: "bg-red-50/60 border-red-300/60",
       Memoriale: "bg-gray-50/60 border-gray-300/60",
     };
@@ -181,7 +190,7 @@ export const Books = () => {
             Bibliografia Completa
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            oltre 20 pubblicazioni nell&apos;arco di tre decenni (1995-2024),
+            oltre 20 pubblicazioni nell&apos;arco di tre decenni (1995-2026),
             dalla demo-antropologia alla scrittura creativa, dalla poesia in
             italiano alle opere in dialetto lucano.
           </p>
@@ -190,7 +199,7 @@ export const Books = () => {
               {books.length} opere totali
             </span>
             <span className="inline-flex items-center px-3 py-1 text-sm font-medium text-gray-600 bg-gray-50 rounded-full border">
-              Dal 1995 al 2024
+              Dal 1995 al 2026
             </span>
           </div>
         </div>
@@ -293,7 +302,7 @@ export const Books = () => {
                 <div>Prima pubblicazione</div>
               </div>
               <div>
-                <div className="font-semibold text-gray-700 text-lg">2024</div>
+                <div className="font-semibold text-gray-700 text-lg">2026</div>
                 <div>Ultima opera</div>
               </div>
               <div>

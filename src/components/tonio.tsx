@@ -123,7 +123,7 @@ function HeroSection() {
 
                 <div className="mt-6 flex flex-wrap gap-3 text-sm">
                   <span className="inline-flex items-center px-3 py-1 bg-amber-100/70 text-amber-800 rounded-full font-medium">
-                    20 pubblicazioni
+                    21 pubblicazioni
                   </span>
                   <span className="inline-flex items-center px-3 py-1 bg-blue-100/70 text-blue-800 rounded-full font-medium">
                     12 laboratori creativi
@@ -161,7 +161,7 @@ function HeroSection() {
                   </svg>
                 </a>
                 <span id="bibliografia-desc" className="sr-only">
-                  Esplora la bibliografia completa di oltre 20 pubblicazioni
+                  Esplora la bibliografia completa di oltre 21 pubblicazioni
                 </span>
                 <a
                   href="#progetti"
@@ -364,7 +364,7 @@ function BiographySection() {
                 <div className="bg-white/70 rounded-lg p-4 border-l-4 border-purple-500 shadow-sm">
                   <div className="flex items-center mb-2">
                     <dt className="font-bold text-purple-800 text-lg">
-                      20 pubblicazioni
+                      21 pubblicazioni
                     </dt>
                   </div>
                   <dd className="text-gray-700 font-medium">
@@ -372,7 +372,7 @@ function BiographySection() {
                     dialetto
                   </dd>
                   <dd className="text-sm text-gray-600 italic">
-                    Un corpus letterario ricco e diversificato (1995-2024)
+                    Un corpus letterario ricco e diversificato (1995-2026)
                   </dd>
                 </div>
               </dl>

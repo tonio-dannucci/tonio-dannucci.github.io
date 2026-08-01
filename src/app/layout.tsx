@@ -165,6 +165,12 @@ export default function RootLayout({
         name: "100 e più del Novecento",
         datePublished: "2024",
       },
+      {
+        "@type": "CreativeWork",
+        name: "Tre finestre sul cortile minimale",
+        datePublished: "2026",
+        publisher: "Edizioni Basiliskos",
+      },
     ],
     url: "https://tonio-dannucci.vercel.app",
     sameAs: [
