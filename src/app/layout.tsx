@@ -1,22 +1,25 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { books } from "@/lib/books";
+import {
+  OG_IMAGE,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+} from "@/lib/site";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ display: "swap", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://tonio-dannucci.vercel.app",
-    languages: {
-      "it-IT": "https://tonio-dannucci.vercel.app",
-    },
+    canonical: "/",
   },
-  authors: [{ name: "Tonio d'Annucci" }],
+  authors: [{ name: "Tonio d'Annucci", url: SITE_URL }],
   category: "Education, Literature, Culture",
-  classification: "Biography, Educational Innovation, Italian Literature",
   creator: "Tonio d'Annucci",
-  description:
-    "Antonio 'Tonio' d'Annucci (1944-): maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata con oltre 20 pubblicazioni e 43 anni di carriera didattica (1968-2011). Creatore dei laboratori di scrittura creativa apprezzati da Kenneth Koch (Columbia University).",
+  description: SITE_DESCRIPTION,
   keywords: [
     "Tonio d'Annucci",
     "Antonio d'Annucci",
@@ -42,22 +45,17 @@ export const metadata: Metadata = {
     "tradizioni orali",
     "demo-antropologia",
   ],
+  // Resolves every relative asset URL below against the canonical origin.
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     description:
       "Maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata con oltre 20 pubblicazioni e laboratori di scrittura creativa.",
-    images: [
-      {
-        alt: "Tonio d'Annucci - Maestro e autore lucano",
-        height: 800,
-        url: "/tonio.jpg",
-        width: 800,
-      },
-    ],
+    images: [OG_IMAGE],
     locale: "it_IT",
-    siteName: "Tonio d'Annucci - Sito Ufficiale",
-    title: "Tonio d'Annucci - Maestro, Autore e Innovatore Pedagogico Lucano",
+    siteName: `${SITE_NAME} - Sito Ufficiale`,
+    title: SITE_TITLE,
     type: "profile",
-    url: "https://tonio-dannucci.vercel.app",
+    url: "/",
   },
   publisher: "Tonio d'Annucci",
   robots: {
@@ -72,19 +70,104 @@ export const metadata: Metadata = {
     index: true,
   },
   title: {
-    default: "Tonio d'Annucci - Maestro, Autore e Innovatore Pedagogico Lucano",
-    template: "%s | Tonio d'Annucci",
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
   },
   twitter: {
-    card: "summary_large_image",
+    // The portrait is square: a wide card would crop straight through his face.
+    card: "summary",
     description:
       "Maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata.",
-    images: ["/tonio.jpg"],
-    title: "Tonio d'Annucci - Maestro, Autore e Innovatore Pedagogico Lucano",
+    images: [OG_IMAGE.url],
+    title: SITE_TITLE,
   },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
+};
+
+const PERSON_ID = `${SITE_URL}/#person`;
+
+/**
+ * One `@graph` instead of a bare Person: schema.org has no `author` property on
+ * Person, so the books are separate nodes pointing back at him by `@id`.
+ */
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": `${SITE_URL}/#website`,
+      "@type": "WebSite",
+      description: SITE_DESCRIPTION,
+      inLanguage: "it-IT",
+      name: `${SITE_NAME} - Sito Ufficiale`,
+      publisher: { "@id": PERSON_ID },
+      url: SITE_URL,
+    },
+    {
+      "@id": PERSON_ID,
+      "@type": "Person",
+      alternateName: "Tonio d'Annucci",
+      award: [
+        "Riconoscimento di Kenneth Koch (Columbia University)",
+        "Collaborazione con Ministero di Grazia e Giustizia",
+        "Citazione bibliografica in opere di Gian Antonio Stella",
+      ],
+      birthDate: "1944-05-26",
+      birthPlace: {
+        "@type": "Place",
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "IT",
+          addressLocality: "Atella",
+          addressRegion: "Basilicata",
+        },
+        name: "Atella",
+      },
+      description:
+        "Maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata con oltre 20 pubblicazioni e 43 anni di carriera didattica.",
+      image: `${SITE_URL}${OG_IMAGE.url}`,
+      jobTitle: [
+        "Maestro elementare",
+        "Autore",
+        "Promotore culturale",
+        "Innovatore pedagogico",
+      ],
+      knowsAbout: [
+        "Pedagogia",
+        "Scrittura creativa",
+        "Letteratura italiana",
+        "Dialetto lucano",
+        "Demo-antropologia",
+        "Tradizioni orali",
+        "Cultura lucana",
+      ],
+      name: "Antonio d'Annucci",
+      nationality: { "@type": "Country", name: "Italia" },
+      sameAs: ["https://www.youtube.com/@toniodannucci9485/videos"],
+      url: SITE_URL,
+      worksFor: {
+        "@type": "Organization",
+        name: "Scuole della Provincia di Potenza",
+      },
+    },
+    ...books.map((book) => ({
+      "@id": `${SITE_URL}${book.href}`,
+      "@type": "Book",
+      abstract: book.description,
+      author: { "@id": PERSON_ID },
+      datePublished: String(book.anno),
+      encodingFormat: "application/pdf",
+      genre: book.tags,
+      inLanguage: "it",
+      name: book.titolo,
+      url: `${SITE_URL}${book.href}`,
+      ...(book.editore && {
+        publisher: { "@type": "Organization", name: book.editore },
+      }),
+      ...(book.ISBN && { isbn: book.ISBN }),
+    })),
+  ],
 };
 
 export default function RootLayout({
@@ -92,94 +175,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    alternateName: "Tonio d'Annucci",
-    alumniOf: "Scuola Normale",
-    author: [
-      {
-        "@type": "CreativeWork",
-        datePublished: "1996",
-        name: "Atella del villaggio pre-globale (1900-1960)",
-        publisher: "Basiliskos",
-      },
-      {
-        "@type": "CreativeWork",
-        datePublished: "1997",
-        name: "Laboratorio di Scrittura Creativa 2",
-        publisher: "Basiliskos",
-      },
-      {
-        "@type": "CreativeWork",
-        datePublished: "2003",
-        name: "Le Stanze della Memoria",
-      },
-      {
-        "@type": "CreativeWork",
-        datePublished: "2012",
-        name: "Creo, ergo sum",
-      },
-      {
-        "@type": "CreativeWork",
-        datePublished: "2023",
-        name: "Affacci sul Novecento",
-      },
-      {
-        "@type": "CreativeWork",
-        datePublished: "2024",
-        name: "100 e più del Novecento",
-      },
-      {
-        "@type": "CreativeWork",
-        datePublished: "2026",
-        name: "Tre finestre sul cortile minimale",
-        publisher: "Edizioni Basiliskos",
-      },
-    ],
-    award: [
-      "Riconoscimento di Kenneth Koch (Columbia University)",
-      "Collaborazione con Ministero di Grazia e Giustizia",
-      "Citazione bibliografica in opere di Gian Antonio Stella",
-    ],
-    birthDate: "1944-05-26",
-    birthPlace: {
-      "@type": "Place",
-      addressCountry: "IT",
-      addressRegion: "Basilicata",
-      name: "Atella",
-    },
-    description:
-      "Maestro elementare, autore e promotore culturale lucano. Pioniere dell'innovazione pedagogica in Basilicata con oltre 20 pubblicazioni e 43 anni di carriera didattica.",
-    image: "https://tonio-dannucci.vercel.app/tonio.jpg",
-    jobTitle: [
-      "Maestro elementare",
-      "Autore",
-      "Promotore culturale",
-      "Innovatore pedagogico",
-    ],
-    knowsAbout: [
-      "Pedagogia",
-      "Scrittura creativa",
-      "Letteratura italiana",
-      "Dialetto lucano",
-      "Demo-antropologia",
-      "Tradizioni orali",
-      "Cultura lucana",
-    ],
-    name: "Antonio d'Annucci",
-    nationality: "Italian",
-    sameAs: [
-      "https://www.youtube.com/@toniodannucci9485/videos",
-      "http://tonio-dannucci.github.io",
-    ],
-    url: "https://tonio-dannucci.vercel.app",
-    worksFor: {
-      "@type": "Organization",
-      name: "Scuole della Provincia di Potenza",
-    },
-  };
-
   return (
     <html lang="it-IT">
       <head>
@@ -187,15 +182,6 @@ export default function RootLayout({
           // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD must be injected as raw text; the payload is a static object built above.
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
           type="application/ld+json"
-        />
-        <link href="https://tonio-dannucci.vercel.app" rel="canonical" />
-        <meta
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-          name="robots"
-        />
-        <meta
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-          name="googlebot"
         />
       </head>
       <body className={inter.className}>{children}</body>
