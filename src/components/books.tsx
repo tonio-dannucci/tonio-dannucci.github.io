@@ -184,7 +184,7 @@ export const Books = () => {
 
   return (
     <section className="py-16 bg-white" id="bibliografia">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 sm:text-4xl">
             Bibliografia Completa
@@ -225,7 +225,7 @@ export const Books = () => {
                   >
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center gap-3">
-                        <span className="inline-flex items-center px-3 py-1 text-sm font-medium bg-white text-gray-700 rounded-full border shadow-sm">
+                        <span className="inline-flex items-center px-3 py-1 text-sm font-medium bg-white text-gray-700 rounded-full border shadow-xs">
                           {book.anno}
                         </span>
                         {book.editore && (
@@ -241,7 +241,7 @@ export const Books = () => {
                     </h4>
 
                     {book.ISBN && (
-                      <p className="text-sm text-gray-500 mb-4 font-mono bg-white/60 px-3 py-1 rounded">
+                      <p className="text-sm text-gray-500 mb-4 font-mono bg-white/60 px-3 py-1 rounded-sm">
                         ISBN: {book.ISBN}
                       </p>
                     )}

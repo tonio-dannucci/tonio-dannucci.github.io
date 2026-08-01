@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-amber-50 to-orange-50 border-t border-amber-200">
-      <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <footer className="bg-linear-to-br from-amber-50 to-orange-50 border-t border-amber-200">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Sezione principale */}
           <div className="lg:col-span-2">

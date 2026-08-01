@@ -14,7 +14,7 @@ export function Tonio() {
 function HeroSection() {
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50"
+      className="relative overflow-hidden bg-linear-to-br from-amber-50 via-orange-50 to-yellow-50"
       itemScope
       itemType="https://schema.org/Person"
     >
@@ -25,10 +25,10 @@ function HeroSection() {
         <div className="absolute bottom-10 right-1/4 w-24 h-24 bg-yellow-200/30 rounded-full blur-xl"></div>
       </div>
 
-      <div className="relative mx-auto max-w-screen-xl px-4 pb-16 pt-24 sm:px-6 lg:px-8 lg:py-24">
+      <div className="relative mx-auto max-w-(--breakpoint-xl) px-4 pb-16 pt-24 sm:px-6 lg:px-8 lg:py-24">
         <div className="relative lg:flex lg:items-center lg:gap-12">
           {/* Image section with clean design */}
-          <div className="hidden lg:block lg:flex-shrink-0">
+          <div className="hidden lg:block lg:shrink-0">
             <div className="relative">
               <img
                 width={320}
@@ -45,7 +45,7 @@ function HeroSection() {
           <div className="relative lg:flex-1">
             <header>
               <div className="flex">
-                <div className="flex-shrink-0 lg:hidden">
+                <div className="shrink-0 lg:hidden">
                   <img
                     width={96}
                     height={96}
@@ -59,12 +59,12 @@ function HeroSection() {
                 <div className="flex ml-4 sm:ml-6 lg:ml-0">
                   <div className="mb-6 lg:ml-0">
                     <div className="mb-4">
-                      <div className="inline-flex items-center px-3 py-1 bg-amber-100/60 backdrop-blur-sm text-amber-800 text-sm font-semibold rounded-full border border-amber-200/30 mb-4">
+                      <div className="inline-flex items-center px-3 py-1 bg-amber-100/60 backdrop-blur-xs text-amber-800 text-sm font-semibold rounded-full border border-amber-200/30 mb-4">
                         Maestro innovatore lucano
                       </div>
                     </div>
                     <h1
-                      className="text-3xl sm:text-4xl font-bold leading-tight text-gray-900 lg:text-5xl xl:text-6xl bg-gradient-to-r from-gray-900 via-amber-800 to-orange-800 bg-clip-text text-transparent"
+                      className="text-3xl sm:text-4xl font-bold leading-tight text-gray-900 lg:text-5xl xl:text-6xl bg-linear-to-r from-gray-900 via-amber-800 to-orange-800 bg-clip-text text-transparent"
                       itemProp="name"
                     >
                       Tonio d&apos;Annucci
@@ -77,7 +77,7 @@ function HeroSection() {
                     </p>
 
                     <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                      <div className="bg-white/40 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/30 shadow-sm">
+                      <div className="bg-white/40 backdrop-blur-xs px-4 py-3 rounded-lg border border-white/30 shadow-xs">
                         <div itemProp="birthDate" content="1944-05-26">
                           <div className="font-semibold text-gray-900">
                             26 maggio 1944
@@ -88,7 +88,7 @@ function HeroSection() {
                         </div>
                       </div>
 
-                      <div className="bg-white/40 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/30 shadow-sm">
+                      <div className="bg-white/40 backdrop-blur-xs px-4 py-3 rounded-lg border border-white/30 shadow-xs">
                         <div>
                           <div className="font-semibold text-gray-900">
                             1968-2011
@@ -105,7 +105,7 @@ function HeroSection() {
             </header>
 
             <div className="mt-8">
-              <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-lg">
+              <div className="bg-white/50 backdrop-blur-xs p-6 rounded-xl border border-white/30 shadow-lg">
                 <p
                   className="text-base sm:text-lg leading-relaxed text-gray-700 lg:text-xl font-medium"
                   itemProp="description"
@@ -142,7 +142,7 @@ function HeroSection() {
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <a
                   href="#bibliografia"
-                  className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl hover:from-amber-700 hover:to-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
+                  className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-amber-600 to-orange-600 text-white font-bold rounded-xl hover:from-amber-700 hover:to-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
                   aria-describedby="bibliografia-desc"
                 >
                   Scopri le opere
@@ -165,7 +165,7 @@ function HeroSection() {
                 </span>
                 <a
                   href="#progetti"
-                  className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white/60 backdrop-blur-sm border-2 border-amber-600 text-amber-700 font-bold rounded-xl hover:bg-amber-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
+                  className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white/60 backdrop-blur-xs border-2 border-amber-600 text-amber-700 font-bold rounded-xl hover:bg-amber-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
                   aria-describedby="progetti-desc"
                 >
                   I progetti educativi
@@ -194,25 +194,25 @@ function HeroSection() {
 
         {/* Stats section */}
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-lg text-center">
+          <div className="bg-white/50 backdrop-blur-xs p-6 rounded-xl border border-white/30 shadow-lg text-center">
             <div className="text-3xl font-bold text-amber-600 mb-2">43</div>
             <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">
               Anni di insegnamento
             </div>
           </div>
-          <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-lg text-center">
+          <div className="bg-white/50 backdrop-blur-xs p-6 rounded-xl border border-white/30 shadow-lg text-center">
             <div className="text-3xl font-bold text-blue-600 mb-2">20</div>
             <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">
               Pubblicazioni
             </div>
           </div>
-          <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-lg text-center">
+          <div className="bg-white/50 backdrop-blur-xs p-6 rounded-xl border border-white/30 shadow-lg text-center">
             <div className="text-3xl font-bold text-green-600 mb-2">12</div>
             <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">
               Laboratori creativi
             </div>
           </div>
-          <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-lg text-center">
+          <div className="bg-white/50 backdrop-blur-xs p-6 rounded-xl border border-white/30 shadow-lg text-center">
             <div className="text-3xl font-bold text-purple-600 mb-2">∞</div>
             <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">
               Studenti ispirati
@@ -227,7 +227,7 @@ function HeroSection() {
 function BiographySection() {
   return (
     <section className="py-16 bg-white" aria-labelledby="biografia-heading">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start">
           <article>
             <h2
@@ -237,7 +237,7 @@ function BiographySection() {
               Biografia
             </h2>
             <div className="prose prose-lg text-gray-700 max-w-none space-y-6">
-              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
+              <div className="bg-linear-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
                 <p className="text-lg leading-relaxed mb-0">
                   <strong className="text-amber-800">
                     Tonio d&apos;Annucci
@@ -308,7 +308,7 @@ function BiographySection() {
           </article>
 
           <aside className="mt-12 lg:mt-0" aria-labelledby="timeline-heading">
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg p-8 border border-amber-200">
+            <div className="bg-linear-to-br from-amber-50 to-orange-50 rounded-lg p-8 border border-amber-200">
               <h3
                 id="timeline-heading"
                 className="text-xl font-bold text-gray-900 mb-8 text-center"
@@ -316,7 +316,7 @@ function BiographySection() {
                 Punti salienti della carriera
               </h3>
               <dl className="space-y-6">
-                <div className="bg-white/70 rounded-lg p-4 border-l-4 border-amber-500 shadow-sm">
+                <div className="bg-white/70 rounded-lg p-4 border-l-4 border-amber-500 shadow-xs">
                   <div className="flex items-center mb-2">
                     <dt className="font-bold text-amber-800 text-lg">
                       1968-2011
@@ -331,7 +331,7 @@ function BiographySection() {
                   </dd>
                 </div>
 
-                <div className="bg-white/70 rounded-lg p-4 border-l-4 border-blue-500 shadow-sm">
+                <div className="bg-white/70 rounded-lg p-4 border-l-4 border-blue-500 shadow-xs">
                   <div className="flex items-center mb-2">
                     <dt className="font-bold text-blue-800 text-lg">
                       Anni &apos;80
@@ -346,7 +346,7 @@ function BiographySection() {
                   </dd>
                 </div>
 
-                <div className="bg-white/70 rounded-lg p-4 border-l-4 border-green-500 shadow-sm">
+                <div className="bg-white/70 rounded-lg p-4 border-l-4 border-green-500 shadow-xs">
                   <div className="flex items-center mb-2">
                     <dt className="font-bold text-green-800 text-lg">
                       Anni &apos;90-2012
@@ -361,7 +361,7 @@ function BiographySection() {
                   </dd>
                 </div>
 
-                <div className="bg-white/70 rounded-lg p-4 border-l-4 border-purple-500 shadow-sm">
+                <div className="bg-white/70 rounded-lg p-4 border-l-4 border-purple-500 shadow-xs">
                   <div className="flex items-center mb-2">
                     <dt className="font-bold text-purple-800 text-lg">
                       21 pubblicazioni
@@ -394,7 +394,7 @@ function BiographySection() {
 function EducationalProjectsSection() {
   return (
     <section id="progetti" className="py-16 bg-gray-50">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Progetti Educativi
@@ -522,7 +522,7 @@ function EducationalProjectsSection() {
 function LiteraryWorksSection() {
   return (
     <section className="py-16 bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Opera Letteraria
@@ -535,7 +535,7 @@ function LiteraryWorksSection() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8">
+          <div className="bg-linear-to-br from-blue-50 to-indigo-50 rounded-lg p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-6">
               Saggistica Demo-Antropologica
             </h3>
@@ -572,7 +572,7 @@ function LiteraryWorksSection() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-8">
+          <div className="bg-linear-to-br from-green-50 to-emerald-50 rounded-lg p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-6">
               Narrativa e Poesia
             </h3>
@@ -607,7 +607,7 @@ function LiteraryWorksSection() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-lg p-8">
+          <div className="bg-linear-to-br from-orange-50 to-red-50 rounded-lg p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-6">
               Opere in Dialetto Lucano
             </h3>
@@ -651,7 +651,7 @@ function LiteraryWorksSection() {
 function DigitalPresenceSection() {
   return (
     <section className="py-16 bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Presenza Digitale e Innovazione
@@ -750,8 +750,8 @@ function DigitalPresenceSection() {
 
 function RecognitionsSection() {
   return (
-    <section className="py-16 bg-gradient-to-br from-amber-50 to-orange-50">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-linear-to-br from-amber-50 to-orange-50">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Riconoscimenti e Collaborazioni
