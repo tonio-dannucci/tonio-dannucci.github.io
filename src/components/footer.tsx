@@ -1,122 +1,98 @@
+/**
+ * Colophon. Name, one line, the one place his work lives outside this site,
+ * then the rights and — last, below them — the credit for building the site.
+ *
+ * Apostrophes are written as a literal `'`, never `&apos;`: an HTML entity in a
+ * JSX text node makes this toolchain drop the node's leading space, which is
+ * how "© 1995-2026 Tonio" used to render as "2026Tonio".
+ */
+
+const YOUTUBE_URL = "https://www.youtube.com/@toniodannucci9485/videos";
+const BUILDER_URL = "https://ludusrusso.dev";
+
+/**
+ * Both destinations here are off-site and open in a new tab, which WCAG 3.2.5
+ * only allows if it is announced. The visible text stays clean and the warning
+ * rides inside the link's accessible name.
+ */
+const NEW_TAB = " (si apre in una nuova scheda)";
+
+/** Underlined, never colour alone: the legibility rule for every link. */
+const LINK =
+  "text-ciclostile underline decoration-2 underline-offset-[0.3em] transition-colors hover:text-inchiostro";
+
+/**
+ * The typewriter register at 16px, sentence case. These are sentences rather
+ * than labels, and tracked-out uppercase at this length is a wall.
+ */
+const META = "font-macchina text-[1rem] tracking-[0.02em]";
+
+/**
+ * An explicit, formatter-proof space. A literal `{" "}` is equivalent, but the
+ * formatter collapses it back into plain text whenever the line fits, and the
+ * space is then at the mercy of the transform described above.
+ */
+const SPACE = " ";
+
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="border-amber-200 border-t bg-linear-to-br from-amber-50 to-orange-50">
-      <div className="mx-auto max-w-(--breakpoint-xl) px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-3">
-          {/* Sezione principale */}
-          <div className="lg:col-span-2">
-            <div className="mb-8">
-              <h3 className="mb-4 font-bold text-2xl text-gray-900">
-                Tonio d&apos;Annucci
-              </h3>
-              <p className="max-w-2xl text-gray-700 text-lg">
-                Maestro elementare, autore e promotore culturale lucano. Oltre
-                quattro decenni dedicati all&apos;innovazione pedagogica e alla
-                valorizzazione della cultura di Basilicata.
-              </p>
-            </div>
+    <footer className="border-inchiostro/20 border-t">
+      <div className="mx-auto max-w-[1180px] px-6 py-16 md:px-10">
+        {/* The left padding lands the colophon on the same column as the
+            apparato above it: 16rem of margin rail plus its 2.5rem gutter, and
+            at the same `lg` breakpoint where that rail appears. */}
+        <div className="mx-auto max-w-[58rem] lg:pl-[18.5rem]">
+          {/* Newsreader, not Bodoni: at 24px a didone is below the size where
+              its hairlines survive. */}
+          <p className="font-semibold font-testo text-[1.5rem] leading-tight">
+            Tonio d'Annucci
+          </p>
+          <p className="mt-4 max-w-[62ch] font-testo text-[1.25rem] text-grafite leading-[1.75]">
+            Maestro elementare ad Atella, dal 1968 al 2011. Tutti i suoi libri
+            si scaricano da questo sito.
+          </p>
 
-            <div className="grid gap-8 sm:grid-cols-2">
-              <div>
-                <h4 className="mb-4 font-semibold text-gray-900 text-lg">
-                  Opere principali
-                </h4>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Atella del villaggio pre-globale (1996)</li>
-                  <li>• Laboratori di Scrittura Creativa (1995-2012)</li>
-                  <li>• Affacci sul Novecento (2023)</li>
-                  <li>• 100 e più del Novecento (2024)</li>
-                </ul>
-              </div>
+          {/* One destination, so one line: a list of a single item would read
+              as though something had gone missing from it. */}
+          <p className={`mt-8 text-grafite ${META}`}>
+            <a
+              className={LINK}
+              href={YOUTUBE_URL}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              YouTube
+              <span className="sr-only">{NEW_TAB}</span>
+            </a>{" "}
+            — video d'archivio
+          </p>
 
-              <div>
-                <h4 className="mb-4 font-semibold text-gray-900 text-lg">
-                  Aree di ricerca
-                </h4>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Demo-antropologia lucana</li>
-                  <li>• Innovazione pedagogica</li>
-                  <li>• Scrittura creativa didattica</li>
-                  <li>• Tradizioni orali e dialetto</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Sezione contatti e link */}
-          <div className="lg:col-span-1">
-            <div className="rounded-lg border border-amber-200 bg-white/60 p-6">
-              <h4 className="mb-6 font-semibold text-gray-900 text-lg">
-                Presenza digitale
-              </h4>
-
-              <div className="space-y-4">
-                <a
-                  aria-label="Canale YouTube di Tonio d'Annucci"
-                  className="group flex items-center text-gray-700 transition-colors hover:text-red-600"
-                  href="https://www.youtube.com/@toniodannucci9485/videos"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 transition-colors group-hover:bg-red-200">
-                    <svg
-                      aria-hidden="true"
-                      className="h-5 w-5 text-red-600"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-medium">Canale YouTube</div>
-                    <div className="text-gray-500 text-sm">
-                      Video didattici e presentazioni
-                    </div>
-                  </div>
-                </a>
-
-                <div className="flex items-center text-gray-700">
-                  <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
-                    <svg
-                      aria-hidden="true"
-                      className="h-5 w-5 text-blue-600"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121L7.94 13.208l-2.906-.906c-.63-.196-.64-.63.135-.93l11.566-4.458c.538-.196 1.006.128.832.807z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-medium">Skill Alexa</div>
-                    <div className="text-gray-500 text-sm">
-                      Poesie de l&apos;Acquario di Chandra
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 border-amber-200 border-t pt-6">
-                <div className="text-gray-600 text-sm">
-                  <div className="mb-2 font-semibold">Nato ad Atella (PZ)</div>
-                  <div>26 maggio 1944</div>
-                  <div className="mt-2">Carriera didattica: 1968-2011</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="mt-12 border-amber-200 border-t pt-8">
-          <div className="flex flex-col items-center justify-between sm:flex-row">
-            <p className="text-gray-600">
-              © 1995-{new Date().getFullYear()} Tonio d&apos;Annucci. Tutti i
-              diritti riservati.
+          <div className="mt-10 border-inchiostro/20 border-t pt-6">
+            <p className={`text-grafite ${META}`}>
+              © 1995–{year}
+              {SPACE}Tonio d'Annucci
             </p>
-            <div className="mt-4 flex items-center text-gray-500 text-sm sm:mt-0">
-              <span>Realizzato per preservare la memoria culturale lucana</span>
-            </div>
+            <p className="mt-4 max-w-[62ch] font-testo text-[1.25rem] text-grafite leading-[1.75]">
+              I testi sono suoi. I libri stanno qui per essere letti: si
+              scaricano liberamente, senza registrazione.
+            </p>
+
+            {/* The builder's note, last and on its own: it belongs under the
+                author's copyright line, not beside it. */}
+            <p className={`mt-6 text-grafite ${META}`}>
+              Sito realizzato da{SPACE}
+              <a
+                className={LINK}
+                href={BUILDER_URL}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Ludovico Russo
+                <span className="sr-only">{NEW_TAB}</span>
+              </a>
+            </p>
           </div>
         </div>
       </div>

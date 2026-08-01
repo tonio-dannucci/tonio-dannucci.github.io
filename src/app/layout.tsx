@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bodoni_Moda, Courier_Prime, Newsreader } from "next/font/google";
 import { books } from "@/lib/books";
 import {
   OG_IMAGE,
@@ -10,7 +10,30 @@ import {
   SITE_URL,
 } from "@/lib/site";
 
-const inter = Inter({ display: "swap", subsets: ["latin"] });
+/**
+ * Three families, exposed to Tailwind as `--font-display`, `--font-testo` and
+ * `--font-macchina` in globals.css. Bodoni Moda and Newsreader are variable
+ * fonts, so we load the whole axis instead of pinning discrete weights.
+ */
+const bodoni = Bodoni_Moda({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-bodoni",
+});
+
+const newsreader = Newsreader({
+  display: "swap",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-newsreader",
+});
+
+const courier = Courier_Prime({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-courier",
+  weight: ["400", "700"],
+});
 
 export const metadata: Metadata = {
   alternates: {
@@ -162,6 +185,9 @@ const structuredData = {
       inLanguage: "it",
       name: book.titolo,
       url: `${SITE_URL}${book.href}`,
+      // The scanned front cover, where there is one. Bianchina affatturata has
+      // no cover art, so it declares no image rather than a placeholder.
+      ...(book.cover && { image: `${SITE_URL}${book.cover}` }),
       ...(book.editore && {
         publisher: { "@type": "Organization", name: book.editore },
       }),
@@ -176,7 +202,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="it-IT">
+    <html
+      className={`${bodoni.variable} ${newsreader.variable} ${courier.variable}`}
+      lang="it-IT"
+    >
       <head>
         <script
           // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD must be injected as raw text; the payload is a static object built above.
@@ -184,7 +213,7 @@ export default function RootLayout({
           type="application/ld+json"
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
