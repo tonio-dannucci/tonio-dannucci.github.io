@@ -1,27 +1,92 @@
 @import "tailwindcss";
 
+/*
+  Design tokens for the whole site.
+
+  The palette is the violet ink of a `ciclostile` (mimeograph) on warm paper:
+  the machine that printed Italian school handouts through Tonio's entire
+  career. Components consume these as plain Tailwind utilities
+  (`bg-carta`, `text-inchiostro`, `border-inchiostro/20`, `font-display`, ...)
+  — there are deliberately no component classes here.
+
+  Legibility is the governing constraint: the author reads with difficulty, and
+  the site offers no text-size control, so the defaults have to carry the job.
+  Every text colour clears WCAG AAA (7:1) on `carta`.
+*/
 @theme {
-  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-  --background-image-gradient-conic: conic-gradient(
-    from 180deg at 50% 50%,
-    var(--tw-gradient-stops)
-  );
+  /* Surfaces */
+  --color-carta: #edeae3; /* page background, warm grey paper */
+  --color-carta-alta: #f5f3ee; /* raised surfaces, used sparingly */
+
+  /* Text */
+  --color-inchiostro: #1b1a18; /* primary text — 14.47 on carta */
+  --color-grafite: #4e4a44; /* secondary text, captions — 7.32 on carta */
+
+  /* Accent */
+  --color-ciclostile: #4a3f9e; /* links, rules, structure — 7.00 on carta */
+  --color-velo: #dad5ee; /* ciclostile tint: fills only, never a rule */
+  --color-matita: #b4331f; /* teacher's red pen — at most one use per page */
+
+  /* Typefaces. The `--font-*` variables are set by next/font in layout.tsx. */
+  --font-display: var(--font-bodoni), "Bodoni Moda", Didot, serif;
+  --font-testo: var(--font-newsreader), Georgia, serif;
+  --font-macchina: var(--font-courier), "Courier New", monospace;
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
+  /*
+    Tailwind v4 defaults every border to `currentcolor`. Hairlines used to
+    default to `velo`, which is 1.19:1 against the page — a rule nobody could
+    see. Structure now comes from ink at 20%, matching `border-inchiostro/20`
+    exactly (Tailwind compiles opacity modifiers to this same `color-mix`).
+  */
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: color-mix(in oklab, var(--color-inchiostro) 20%, transparent);
+  }
+
+  html {
+    color: var(--color-inchiostro);
+    background: var(--color-carta);
+  }
+
+  /*
+    20px/1.75 is the body setting for the whole site. It is declared here as
+    well as on the reading columns so that anything left unstyled inherits the
+    legible default rather than the browser's 16px.
+  */
+  body {
+    font-family: var(--font-testo);
+    font-size: 1.25rem;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.75;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-ciclostile);
+    outline-offset: 3px;
+  }
+
+  /*
+    `<main>` is focused programmatically by the skip link. It is full-bleed, so
+    an outward ring would be drawn off-viewport and the jump would land with no
+    visible confirmation; drawing it inward puts the frame back on screen.
+  */
+  main:focus-visible {
+    outline-offset: -3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::after,
+  ::before {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

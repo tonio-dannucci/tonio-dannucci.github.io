@@ -1,12 +1,19 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["ultracite/biome/core", "ultracite/biome/next"],
+  "files": {
+    // `.claude/settings.local.json` is per-developer Claude Code state, written
+    // by the tool and ignored by git. Biome does not read .gitignore here, so
+    // without this it formats a file nobody commits and turns `pnpm check` red.
+    "includes": ["!**/.claude"]
+  },
   "linter": {
     "rules": {
       "performance": {
-        // The site is a static export (`output: "export"`), so next/image would
-        // run unoptimized anyway. The two <img> tags are the above-the-fold
-        // portrait: already sized and eagerly loaded.
+        // The site is a static export (`output: "export"`) with no
+        // `images.unoptimized` and no custom loader, so next/image cannot run
+        // at all. Every <img> here carries its real width/height, and the book
+        // covers in the index are lazy-loaded inside closed disclosures.
         "noImgElement": "off"
       }
     }
